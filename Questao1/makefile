@@ -1,0 +1,18 @@
+all: main.o funcionario.o empresa.o
+	g++ -Wall -ansi -pedantic -O0 -g -o main ./obj/*.o
+
+main.o:
+	g++ -c ./application/main.cpp -I ./include -o ./obj/main.o
+
+funcionario.o:
+	g++ -c ./src/funcionario.cpp -I ./include -o ./obj/funcionario.o
+
+empresa.o:
+	g++ -c ./src/empresa.cpp -I ./include -o ./obj/empresa.o
+
+clear:
+	rm ./obj/*.o
+	rm ./main
+
+run:
+	./main
