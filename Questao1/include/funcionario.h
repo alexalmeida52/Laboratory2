@@ -18,6 +18,7 @@ class Funcionario{
     string setNome(string name);
     float setSalario(float salary);
     string setData(string date);
+    void toString();
     
 };
 

@@ -22,11 +22,13 @@ int main(){
     Software.setFuncionario("João");
     Software.setFuncionario("Bob");
     Software.setFuncionario( "Jo");
-
-    cout << "Funcionário da empresa " << Web.getNome() << ": " << endl;
-    Web.getFuncionarios();
-    cout << "Funcionário da empresa " << Software.getNome() << ": " << endl;
-    Software.getFuncionarios();
+    Bruno.toString(); //toString exibe os atributos do objeto.
+    cout << endl;
+    Software.toString();
+    // cout << "Funcionário da empresa " << Web.getNome() << ": " << endl;
+    // Web.getFuncionarios();
+    // cout << "Funcionário da empresa " << Software.getNome() << ": " << endl;
+    // Software.getFuncionarios();
     
    /*  cout << "Funcionário: " << Alex.getNome() << "\nSalário: R$ " << Alex.getSalario()
     << "\nData de admissão: " << Alex.getData() << endl;

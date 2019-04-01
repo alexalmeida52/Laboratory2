@@ -48,7 +48,7 @@ void Empresa::setFuncionario(string name){ // Adiciona um funcionário a uma emp
 }
 void Empresa::getFuncionarios(){ // Lista todos os funcionários de determinada empresa
     for(int i = 0; i < total_funcionarios; i++)
-        cout << funcionarios[i] << endl;
+        cout << "- " << funcionarios[i] << endl;
 }
 
 int Empresa::getTotalEmpresas(){ // Número de empresas cadastradas
@@ -57,4 +57,10 @@ int Empresa::getTotalEmpresas(){ // Número de empresas cadastradas
 
 int Empresa::getQtdFuncionarios(){
     return total_empresas;
+}
+
+void Empresa::toString(){
+    cout << "----------------------------------------------------------------------\nDADOS DA EMPRESA" << "\nNome: " << nome << "\nCNPJ: " << cnpj << "\nFuncionários: " << endl;
+    getFuncionarios();
+    cout << "----------------------------------------------------------------------" << endl;
 }

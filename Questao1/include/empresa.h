@@ -19,6 +19,7 @@ class Empresa{
     void setFuncionario( string name);
     void getFuncionarios();
     int getQtdFuncionarios();
+    void toString();
 };
 
 #endif

@@ -7,6 +7,7 @@ Funcionario::Funcionario(int id, string name, float salary, string date, string 
     nome = name;
     salario = salary;
     data = date;
+    empresa = company;
     // Empresa::company.setFuncionario(nome); Tentativa de adicionar um funcionario a uma empresa atráves do construtor
     total_funcionarios++;
 }
@@ -38,4 +39,9 @@ float Funcionario::setSalario(float salary){
 
 string Funcionario::setData(string date){
     data = date;
+}
+
+void Funcionario::toString(){
+    cout << "----------------------------------------------------------------------\nDADOS DO FUNCIONÁRIO\n"<< "\n\tNome: " << nome << "\n\tSalário: " << salario << "\n\tDesde: " << data << "\n\tEmpresa: " << empresa << endl<< "----------------------------------------------------------------------"<< endl <<endl;
+
 }
