@@ -11,17 +11,18 @@ int Empresa::total_empresas = 0;
 // int Empresa::total_funcionarios = 0;
 int Funcionario::total_funcionarios = 0;
 
-
-
 int main(){
     
     Empresa *empresas = new Empresa[10];
 
+<<<<<<< HEAD
     for(int i = 0; i < Empresa::total_empresas-1; ++i){
 
     }
     system("clear");
     cout << "Digite a qualquer momento o 4 para receber ajuda." << endl;
+=======
+>>>>>>> 224bb79676d6b37a89d9905fce9f6cdc4fde58f2
     painel();
     int opcao = 1;
     while(opcao > 0){
@@ -75,7 +76,13 @@ int main(){
 
                 break;
             case 4:
+<<<<<<< HEAD
                 system("clear");
+=======
+                //cout << "Média: " << Funcionario::total_funcionarios/Empresa::total_empresas << endl;
+                break;
+            case 5:
+>>>>>>> 224bb79676d6b37a89d9905fce9f6cdc4fde58f2
                 painel();
                 break;
             case 5:
@@ -88,6 +95,8 @@ int main(){
                 cout << "Digite uma opção válida" << endl;
         }
     }
+
+    delete[] empresas;
 
     
 
@@ -102,6 +111,7 @@ int main(){
     // Funcionario Bruno("Bruno", 1590.90, data2);
     // Funcionario Jose("José", 1590.90, data3);
 
+<<<<<<< HEAD
     // Empresa Web("WebSites", 123456);
 
     // Web.setFuncionario(Joao);
@@ -109,6 +119,9 @@ int main(){
     // Web.setFuncionario(Alex);
     // Web.setFuncionario(Jose);
     // Web+Jose;
+=======
+    Web.getFuncionarios();
+>>>>>>> 224bb79676d6b37a89d9905fce9f6cdc4fde58f2
 
 
     // Web.getFuncionarios();
