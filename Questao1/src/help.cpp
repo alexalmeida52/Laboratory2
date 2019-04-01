@@ -40,7 +40,10 @@ Funcionario inserirFuncionario(){
     cout << "Digite a data de admissão: " << endl;
     cin >> data;
 
-    Funcionario funcionario(nome, salario, data);
+    Funcionario funcionario;
+    funcionario.setNome(nome);
+    funcionario.setSalario(salario);
+    funcionario.setData(data);
     return funcionario;
 }
 
@@ -54,7 +57,9 @@ Empresa inserirEmpresa(){
     cout << "Digite o CNPJ da empresa:" << endl;
     cin >> cnpj;
 
-    Empresa empresa(nome, cnpj);
+    Empresa empresa;
+    empresa.setNome(nome);
+    empresa.setCnpj(cnpj);
     return empresa;
 }
 
