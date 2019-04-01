@@ -11,15 +11,9 @@ int Empresa::total_empresas = 0;
 // int Empresa::total_funcionarios = 0;
 int Funcionario::total_funcionarios = 0;
 
-
-
 int main(){
 
     Empresa *empresas = new Empresa[10];
-
-    for(int i = 0; i < Empresa::total_empresas-1; ++i){
-
-    }
 
     painel();
     int opcao = 1;
@@ -47,6 +41,9 @@ int main(){
                 empresas[Empresa::total_empresas-1] = inserirEmpresa();
                 break;
             case 4:
+                //cout << "Média: " << Funcionario::total_funcionarios/Empresa::total_empresas << endl;
+                break;
+            case 5:
                 painel();
                 break;
         }
@@ -74,7 +71,6 @@ int main(){
     Web.setFuncionario(Alex);
     Web.setFuncionario(Jose);
     Web+Jose;
-
 
     Web.getFuncionarios();
 
