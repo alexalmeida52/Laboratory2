@@ -1,6 +1,14 @@
 #ifndef __HELP_H__
 #define __HELP_H__
+#include "data.h"
+#include  "empresa.h"
+#include  "funcionario.h"
 
-void instrucoes();
+void painel();
+void painelEmpresa(Empresa &empresa);
+Funcionario inserirFuncionario();
+Empresa inserirEmpresa();
+void selecaoPainelEmpresa(Empresa &empresa);
+int dataParaDias(Data &data);
 
 #endif

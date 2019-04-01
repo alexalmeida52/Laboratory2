@@ -1,13 +1,32 @@
 #include "funcionario.h"
 #include "empresa.h"
 #include <iostream>
+#include <string>
 
 // Constructor
-Funcionario::Funcionario(int id, string name, float salary, string date, string company){
-    nome = name;
-    salario = salary;
-    data = date;
-    empresa = company;
+
+Funcionario::Funcionario(){
+
+}
+
+Funcionario::Funcionario(const Funcionario &f){
+    nome = f.nome;
+    salario = f.salario;
+    data = f.data;
+    empresa = f.empresa;
+}
+
+Funcionario::Funcionario(string n, float s){
+    nome = n;
+    salario = s;
+    Data d; data = d;
+    total_funcionarios++;
+}
+
+Funcionario::Funcionario(string n, float s, Data d){
+    nome = n;
+    salario = s;
+    data = d;
     // Empresa::company.setFuncionario(nome); Tentativa de adicionar um funcionario a uma empresa atráves do construtor
     total_funcionarios++;
 }
@@ -25,23 +44,36 @@ float Funcionario::getSalario(){
     return salario;
 }
 
-string Funcionario::getData(){
+Data Funcionario::getData(){
     return data;
 }
 
-string Funcionario::setNome(string name){
-    nome = name;
+string Funcionario::getEmpresa(){
+    return empresa;
 }
 
-float Funcionario::setSalario(float salary){
-    salario = salary;
+void Funcionario::setNome(string n){
+    nome = n;
 }
 
-string Funcionario::setData(string date){
-    data = date;
+void Funcionario::setSalario(float s){
+    salario = s;
+}
+
+void Funcionario::setData(Data d){
+    data = d;
+}
+
+void Funcionario::setEmpresa(string e){
+    empresa = e;
 }
 
 void Funcionario::toString(){
     cout << "----------------------------------------------------------------------\nDADOS DO FUNCIONÁRIO\n"<< "\n\tNome: " << nome << "\n\tSalário: " << salario << "\n\tDesde: " << data << "\n\tEmpresa: " << empresa << endl<< "----------------------------------------------------------------------"<< endl <<endl;
 
+}
+
+// Compara se dois Funcionarios são iguais (Sobrecarga do operador ==)
+bool Funcionario::operator==(Funcionario &f1){
+    return !nome.compare(f1.getNome());
 }

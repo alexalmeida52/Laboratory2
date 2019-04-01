@@ -1,25 +1,34 @@
 #ifndef __FUNCIONARIO_H__
 #define __FUNCIONARIO_H__
 #include <string>
+#include <data.h>
+
 using namespace std;
+
 class Funcionario{
   private:
     string nome;
     float salario;
-    string data;
+    Data data;
     string empresa;
+
   public:  
     static int total_funcionarios;
     static int getTotalFuncionarios();
-    Funcionario(int id, string name, float salary, string date, string empresa);
+    Funcionario();
+    Funcionario(const Funcionario &f);
+    Funcionario(string n, float s);
+    Funcionario(string n, float s, Data d);
     string getNome();
     float getSalario();
-    string getData();
-    string setNome(string name);
-    float setSalario(float salary);
-    string setData(string date);
+    Data getData();
+    string getEmpresa();
+    void setNome(string n);
+    void setSalario(float s);
+    void setData(Data d);
+    void setEmpresa(string e);
     void toString();
-    
+    bool operator== (Funcionario &f1);
 };
 
 #endif

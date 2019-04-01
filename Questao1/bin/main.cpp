@@ -1,14 +1,94 @@
 #include <iostream>
+#include "data.h"
 #include "funcionario.h"
 #include "empresa.h"
 #include "help.h"
 #include <cstdlib>
 #include <string>
 using namespace std;
+
 int Empresa::total_empresas = 0;
 // int Empresa::total_funcionarios = 0;
 int Funcionario::total_funcionarios = 0;
+
+
+
 int main(){
+
+    Empresa *empresas = new Empresa[10];
+
+    for(int i = 0; i < Empresa::total_empresas-1; ++i){
+
+    }
+
+    painel();
+    int opcao = 1;
+    while(opcao > 0){
+        cout << "O que deseja fazer: ";
+        cin >> opcao;
+        switch(opcao){
+            case 0:
+                opcao = 0;
+                break;
+            case 1:
+                cout << "\n";
+                for(int i = 0; i < Empresa::total_empresas; ++i){
+                    cout << "\t" << i+1 << ". " << empresas[i].getNome() << endl;
+                }
+                cout << "\n";
+                break;
+            case 2:
+                cout << "Selecione a empresa: ";
+                cin >> opcao;
+                selecaoPainelEmpresa(empresas[opcao-1]);
+                break;
+            case 3:
+                Empresa::total_empresas++;
+                empresas[Empresa::total_empresas-1] = inserirEmpresa();
+                break;
+            case 4:
+                painel();
+                break;
+        }
+    }
+
+    
+
+    Data data1;
+    Data data2(15, 3, 2019);
+    Data data3(15, 2, 2018);
+    Data data4(15, 1, 2018);
+    cout << data1-data2 << endl;    
+
+    Funcionario Joao("Joao", 1590.90, data1);
+    Funcionario Alex("Alex", 1590.90, data2);
+    Funcionario Bruno("Bruno", 1590.90, data2);
+    Funcionario Jose("José", 1590.90, data3);
+
+    Empresa Web("WebSites", 123456);
+
+    Web.setFuncionario(Joao);
+    Web.setFuncionario(Bruno);
+    Web.setFuncionario(Alex);
+    Web.setFuncionario(Jose);
+    Web+Jose;
+
+
+    Web.getFuncionarios();
+
+    cout << Web;
+    Web.aumentarSalarios(0.5);
+    cout << Web;
+    Web.getFuncionariosPorExperiencia();
+
+    if (Joao == Alex){
+        cout << "true" << endl;
+    }
+
+    /*
+
+    
+
     system("clear");
     
     Empresa Web("WebSites", 123456);
@@ -41,7 +121,7 @@ int main(){
 }
 
 /* Tentativa de deixar pra fazer as operações durante a execução do programa.
- instrucoes();
+    painel();
     int opcao = 1;
     string nome;
     float cnpj;
