@@ -18,8 +18,10 @@ void painelEmpresa(Empresa &empresa){
     cout << "Digite o número correspondente a uns dos seguintes comandos para exucutá-los." << endl;
     cout << "\n\t1.Listar funcionários" << endl;
     cout << "\t2.Listar funcionários em período de experiência" << endl;
-    cout << "\t3.Cadastrar funcionário" << endl;
-    cout << "\t4.Exibir opções" << endl;
+    cout << "\t3.Aumentar salário de todos os funcionários" << endl;
+    cout << "\t4.Cadastrar funcionário" << endl;
+    cout << "\t5.Média de funcionários por empresa" << endl;
+    cout << "\t6.Exibir opções" << endl;
     cout << "\t0.Voltar" << endl << endl;
 }
 
@@ -28,17 +30,16 @@ Funcionario inserirFuncionario(){
 
     string nome;
     float salario;
-    //Data data;
+    Data data;
 
     cout << "Digite o nome do funcionário:" << endl;
     cin >> nome;
     cout << "Digite o valor do salário de " << nome << ":" << endl;
     cin >> salario;
     cout << "Digite a data de admissão: " << endl;
-    //cin >> data;
+    cin >> data;
 
-    Funcionario funcionario(nome, salario);
-    //funcionario.setData(data);
+    Funcionario funcionario(nome, salario, data);
     return funcionario;
 }
 
@@ -52,9 +53,7 @@ Empresa inserirEmpresa(){
     cout << "Digite o CNPJ da empresa:" << endl;
     cin >> cnpj;
 
-    Empresa empresa;
-    empresa.setNome(nome);
-    empresa.setCnpj(cnpj);
+    Empresa empresa(nome, cnpj);
     return empresa;
 }
 
@@ -74,12 +73,15 @@ void selecaoPainelEmpresa(Empresa &empresa){
             case 2:
                 empresa.getFuncionariosPorExperiencia();
                 break;
-            case 3: {
+            case 3:
+                empresa.getFuncionariosPorExperiencia();
+                break;
+            case 4: {
                 Funcionario funcionario = inserirFuncionario();
                 empresa.setFuncionario(funcionario);
                 break;
             }
-            case 4:
+            case 5:
                 painelEmpresa(empresa);
                 break;
         }

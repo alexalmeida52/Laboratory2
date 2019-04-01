@@ -61,3 +61,8 @@ std::ostream& operator<< (std::ostream &o, Data const &d) {
     o << d.dia << "/" << d.mes << "/" << d.ano ;
     return o;
 }
+
+std::istream& operator>> (std::istream &i, Data &d) {
+ i >> d.dia >> d.mes >> d.ano;
+ return i;
+}

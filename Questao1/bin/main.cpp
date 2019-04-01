@@ -52,6 +52,8 @@ int main(){
         }
     }
 
+    delete[] empresas;
+
     
 
     Data data1;

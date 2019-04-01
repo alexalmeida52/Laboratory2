@@ -19,7 +19,8 @@ class Data{
         Data getData();
         void setData(int d, int m , int a);
         Data operator- (Data &d);
-        friend std::ostream& operator<< (std::ostream &o, Data const &t);
+        friend std::ostream& operator<< (std::ostream &o, Data const &d);
+        friend std::istream& operator>> (std::istream &i, Data &d);
 };
 
 #endif
