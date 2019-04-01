@@ -9,6 +9,7 @@ void painel(){
     cout << "\t2.Selecionar Empresa" << endl;
     cout << "\t3.Cadastrar Empresa" << endl;
     cout << "\t4.Exibir opções" << endl;
+    cout << "\t5.Clear" << endl;
     cout << "\t0.Sair\n" << endl;
 }
 
