@@ -1,4 +1,4 @@
-all: main.o funcionario.o empresa.o
+all: main.o funcionario.o empresa.o help.o
 	g++ -Wall -ansi -pedantic -O0 -g -o main ./obj/*.o
 
 main.o:
@@ -9,6 +9,9 @@ funcionario.o:
 
 empresa.o:
 	g++ -c ./src/empresa.cpp -I ./include -o ./obj/empresa.o
+
+help.o:
+	g++ -c ./src/help.cpp -I ./include -o ./obj/help.o
 
 clear:
 	rm ./obj/*.o

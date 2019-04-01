@@ -1,7 +1,7 @@
 #include "empresa.h"
 #include <iostream>
 #include "funcionario.h"
-
+#include <string>
 
 // Constructor
 Empresa::Empresa(string name, float Cnpj){
@@ -29,8 +29,22 @@ void Empresa::setCnpj(float Cnpj){
 }
 
 void Empresa::setFuncionario(string name){ // Adiciona um funcionário a uma empresa
-    funcionarios[total_funcionarios] = name;
-    total_funcionarios++;
+    int existe = 0;
+    for(int i=0; i < total_funcionarios; i++){
+        
+        if(funcionarios[i].compare(name) == 0){
+            existe = 1;
+        } 
+    }
+    if(!existe){
+        funcionarios[total_funcionarios] = name;
+        total_funcionarios++;
+    } else {
+        cout << name << " já está cadastrado(a)." << endl;
+    }
+
+    
+    
 }
 void Empresa::getFuncionarios(){ // Lista todos os funcionários de determinada empresa
     for(int i = 0; i < total_funcionarios; i++)

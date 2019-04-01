@@ -11,7 +11,7 @@ class Funcionario{
   public:  
     static int total_funcionarios;
     static int getTotalFuncionarios();
-    Funcionario(string name, float salary, string date, string empresa);
+    Funcionario(int id, string name, float salary, string date, string empresa);
     string getNome();
     float getSalario();
     string getData();

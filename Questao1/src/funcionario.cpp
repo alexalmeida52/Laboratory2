@@ -3,7 +3,7 @@
 #include <iostream>
 
 // Constructor
-Funcionario::Funcionario(string name, float salary, string date, string company){
+Funcionario::Funcionario(int id, string name, float salary, string date, string company){
     nome = name;
     salario = salary;
     data = date;

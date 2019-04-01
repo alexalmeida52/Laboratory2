@@ -16,7 +16,7 @@ class Empresa{
     float getCnpj();
     void setNome(string name);
     void setCnpj(float cnpj);
-    void setFuncionario(string name);
+    void setFuncionario( string name);
     void getFuncionarios();
     int getQtdFuncionarios();
 };
