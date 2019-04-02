@@ -15,9 +15,6 @@ int main(){
     
     Empresa *empresas = new Empresa[10];
 
-    for(int i = 0; i < Empresa::total_empresas-1; ++i){
-
-    }
     system("clear");
     cout << "Digite a qualquer momento o 4 para receber ajuda." << endl;
     painel();
@@ -26,61 +23,41 @@ int main(){
         cout << "O que deseja fazer: ";
         cin >> opcao;
         switch(opcao){
-            case 0:
+            case 0: // Sair
                 opcao = 0;
                 break;
-            case 1:
+            case 1: // Listar empresas
                 system("clear");
-                cout << "Empresas: " << endl;
-                if(!Empresa::total_empresas){
-                    system("clear");
-                    cout << "Nenhuma empresa cadastrada." << endl;
-                    painel();
-                    break;
-                }
-                
-                for(int i = 0; i < Empresa::total_empresas; ++i){
-                    cout << "\t" << i+1 << ". " << empresas[i].getNome() << endl;
-                }
+                listarEmpresas(empresas, Empresa::total_empresas);
                 painel();
                 cout << "\n";
                 break;
-            case 2:
+            case 2: // Selecionar empresa
                 system("clear");
-                cout << "Empresas: " << endl;
-                if(!Empresa::total_empresas){
-                    system("clear");
-                    cout << "Nenhuma empresa cadastrada." << endl;
-                    painel();
-                    break;
-                }
-                for(int i = 0; i < Empresa::total_empresas; ++i){
-                    cout << "\t" << i+1 << ". " << empresas[i].getNome() << endl;
-                }
-                
+                listarEmpresas(empresas, Empresa::total_empresas);
                 cout << "\n";
                 cout << "Selecione a empresa: ";
                 cin >> opcao;
                 selecaoPainelEmpresa(empresas[opcao-1]);
                 break;
-            case 3:
+            case 3: // Cadastrar empresa
                 system("clear");
                 Empresa::total_empresas++;
                 empresas[Empresa::total_empresas-1] = inserirEmpresa();
                 system("clear");
                 cout << "Empresa cadastrada com sucesso." << endl;
                 painel();
-
                 break;
-            case 4:
+            case 4: // Exibir média de funcionários por empresa
+                system("clear");
+                cout << "Média de funcionários por empresa: " << Funcionario::total_funcionarios/Empresa::total_empresas << endl;
+                painel();
+                break;
+            case 5: // Limpar a tela e exibir painel
                 system("clear");
                 painel();
                 break;
-            case 5:
-                system("clear");
-                painel();
-                break;
-            default:
+            default: // Caso a opção inválida
                 system("clear");
                 painel();
                 cout << "Digite uma opção válida" << endl;

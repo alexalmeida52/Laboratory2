@@ -10,7 +10,6 @@ class Funcionario{
     string nome;
     float salario;
     Data data;
-    string empresa;
 
   public:  
     static int total_funcionarios;
@@ -22,11 +21,9 @@ class Funcionario{
     string getNome();
     float getSalario();
     Data getData();
-    string getEmpresa();
     void setNome(string n);
     void setSalario(float s);
     void setData(Data d);
-    void setEmpresa(string e);
     void toString();
     bool operator== (Funcionario &f1);
 };

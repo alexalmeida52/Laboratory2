@@ -11,7 +11,6 @@ class Empresa{
     string nome;
     float cnpj;
     int total_funcionarios=0;
-    //string funcionarios[5];
     Funcionario *funcionarios = new Funcionario[10];
 
   public:  

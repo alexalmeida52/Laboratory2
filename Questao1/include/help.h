@@ -9,6 +9,7 @@ void painelEmpresa(Empresa &empresa);
 Funcionario inserirFuncionario();
 Empresa inserirEmpresa();
 void selecaoPainelEmpresa(Empresa &empresa);
+void listarEmpresas(Empresa empresas[], int total_empresas);
 int dataParaDias(Data &data);
 
 #endif

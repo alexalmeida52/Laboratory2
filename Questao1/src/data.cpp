@@ -4,8 +4,7 @@
 #include <stdlib.h>
 #include "funcionario.h"
 
-
-// Se nenhum argumento for passado ao construtor é salvo o dia corrente
+// Se nenhum argumento for passado ao construtor, é salvo a data do dia corrente
 Data::Data(){
     time_t agora = time(0);
     tm *ltm = localtime(&agora);
@@ -15,12 +14,6 @@ Data::Data(){
 }
 
 Data::Data(int d, int m, int a){
-    dia = d;
-    mes = m;
-    ano = a;
-}
-
-void Data::setData(int d, int m, int a){
     dia = d;
     mes = m;
     ano = a;
@@ -42,9 +35,14 @@ Data Data::getData(){
     return Data(dia, mes, ano);
 }
 
+void Data::setData(int d, int m, int a){
+    dia = d;
+    mes = m;
+    ano = a;
+}
+
 // Subtração entre datas
 Data Data::operator- (Data &data){
-
     int data1 = ((data.ano*12)*30)+(data.mes*30)+data.dia;
     int data2 = ((ano*12)*30)+(mes*30)+dia;
     int diferenca = data2-data1;
@@ -62,6 +60,7 @@ std::ostream& operator<< (std::ostream &o, Data const &d) {
     return o;
 }
 
+// Recebe a data no formato dd mm aaaa (Sobrecarga do operador >>)
 std::istream& operator>> (std::istream &i, Data &d) {
  i >> d.dia >> d.mes >> d.ano;
  return i;

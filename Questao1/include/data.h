@@ -2,6 +2,7 @@
 #define __DATA_H__
 #include <string>
 #include <ostream>
+#include <istream>
 #include <ctime>
 
 class Data{

@@ -77,12 +77,6 @@ int Empresa::getQtdFuncionarios(){
     return total_funcionarios;
 }
 
-/*void Empresa::toString(){
-    cout << "----------------------------------------------------------------------\nDADOS DA EMPRESA" << "\nNome: " << nome << "\nCNPJ: " << cnpj << "\nFuncionários: " << endl;
-    getFuncionarios();
-    cout << "----------------------------------------------------------------------" << endl;
-}*/
-
 // Lista funcionarios da empresa contratados há menos de 90 dias
 void Empresa::getFuncionariosPorExperiencia(){
     cout << "----------------------------------------------------------------------" << endl;
@@ -127,15 +121,19 @@ std::ostream& operator<< (std::ostream &o, Empresa const &e) {
     o << "DADOS DA EMPRESA\n" << endl;
     o << "Nome: " << e.nome << endl;
     o << "CNPJ: " << e.cnpj << endl;
-    o << "\nFuncionários: " << endl;
-    o << "Nome" << "\t\t";
-    o << "Salário" << "\t\t";
-    o << "Data de admissão" << "\t\t" << endl;   
-    for(int i = 0; i < e.total_funcionarios; i++){
-        o << e.funcionarios[i].getNome() << "\t\t";
-        o << e.funcionarios[i].getSalario() << "\t\t";
-        o << e.funcionarios[i].getData() << "\t\t" << endl; 
-    }   
-    o << "----------------------------------------------------------------------" << endl;
-    return o;
+    o << "\nFuncionários: ";
+
+    if(e.total_funcionarios == 0){
+        o << "Nenhum funcionário cadastrado." << endl;
+    } else {
+        o << "\nNome" << "\t\t";
+        o << "Salário" << "\t\t";
+        o << "Data de admissão" << "\t\t" << endl;   
+        for(int i = 0; i < e.total_funcionarios; i++){
+            o << e.funcionarios[i].getNome() << "\t\t";
+            o << e.funcionarios[i].getSalario() << "\t\t";
+            o << e.funcionarios[i].getData() << "\t\t" << endl; 
+        }   
+        o << "----------------------------------------------------------------------" << endl;
+    }return o;
 }
