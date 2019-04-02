@@ -16,7 +16,7 @@ int main(){
     Empresa *empresas = new Empresa[10];
 
     system("clear");
-    cout << "Digite a qualquer momento o 4 para receber ajuda." << endl;
+    cout << "Digite a qualquer momento o 5 para receber ajuda." << endl;
     painel();
     int opcao = 1;
     while(opcao > 0){

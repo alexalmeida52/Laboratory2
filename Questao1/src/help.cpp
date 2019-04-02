@@ -92,9 +92,11 @@ void selecaoPainelEmpresa(Empresa &empresa){
             case 4: { // Cadastrar funcionário
                 system("clear");                
                 Funcionario funcionario = inserirFuncionario();
-                empresa.setFuncionario(funcionario);
-                system("clear");                
-                painelEmpresa(empresa);                
+                bool resposta = empresa.setFuncionario(funcionario);
+                if(resposta == true){
+                    system ("clear");
+                    painelEmpresa(empresa);
+                }
                 break;
             }
             case 5: // Limpar a tela e exibir painel de seleção

@@ -23,7 +23,7 @@ class Empresa{
     float getCnpj();
     void setNome(string name);
     void setCnpj(float cnpj);
-    void setFuncionario(Funcionario &f);
+    bool setFuncionario(Funcionario &f);
     void getFuncionarios();
     void getFuncionariosPorExperiencia();
     int getQtdFuncionarios();

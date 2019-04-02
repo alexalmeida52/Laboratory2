@@ -46,8 +46,8 @@ void Empresa::aumentarSalarios(float a){
     }
 }
 
-// Adiciona um novo funcionário a empresa
-void Empresa::setFuncionario(Funcionario &f){
+// Adiciona um novo funcionário a empresa, e se der certo retorna true
+bool Empresa::setFuncionario(Funcionario &f){
 
     int existe = 0;
     for(int i=0; i < total_funcionarios; i++)
@@ -56,8 +56,11 @@ void Empresa::setFuncionario(Funcionario &f){
     if(!existe){
             total_funcionarios++;
             funcionarios[total_funcionarios-1] = f;
+            return true;
     } else {
         cout << f.getNome() << " já está cadastrado(a)." << endl;
+        cout << "Digite 4 para tentar novamente. Ou 5 para ver o painel.\n" << endl;
+        return false;
     }
 }
 
