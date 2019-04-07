@@ -14,18 +14,23 @@ class Funcionario{
   public:  
     static int total_funcionarios;
     static int getTotalFuncionarios();
+
+    // Construtores
     Funcionario();
     Funcionario(const Funcionario &f);
     Funcionario(string n, float s);
     Funcionario(string n, float s, Data d);
+
+    // Getters e Setters
     string getNome();
     float getSalario();
     Data getData();
     void setNome(string n);
     void setSalario(float s);
     void setData(Data d);
-    void toString();
-    bool operator== (Funcionario &f1);
+
+    // Métodos
+    bool operator== (Funcionario &f1); // Compara se dois funcionários são iguais com ==
 };
 
 #endif

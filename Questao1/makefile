@@ -2,7 +2,7 @@ all: main.o funcionario.o empresa.o help.o data.o
 	g++ -Wall -ansi -pedantic -o main ./obj/*.o
 
 main.o:
-	g++ -c ./bin/main.cpp -I ./include -o ./obj/main.o
+	g++ -c ./src/main.cpp -I ./include -o ./obj/main.o
 
 data.o:
 	g++ -c ./src/data.cpp -I ./include -o ./obj/data.o

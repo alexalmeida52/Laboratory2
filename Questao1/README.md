@@ -8,11 +8,11 @@
 ## Diretórios
 
 	Laboratorio2/
-			Questao1/
-					bin/
-					include/
-					obj/
-					src/
+		Questao1/
+			bin/
+			include/
+			obj/
+			src/
 
 ## Comandos para compilar e executar o código no terminal
 
