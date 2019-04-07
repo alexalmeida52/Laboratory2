@@ -35,11 +35,16 @@ int main(){
             case 2: // Selecionar empresa
                 system("clear");
                 listarEmpresas(empresas, Empresa::total_empresas);
-                cout << "\n";
+                if(listarEmpresas(empresas, Empresa::total_empresas)){
+                    cout << "\n";
                 cout << "Selecione a empresa: ";
-                cin >> opcao;
-                selecaoPainelEmpresa(empresas[opcao-1]);
-                break;
+                    cin >> opcao;
+                    selecaoPainelEmpresa(empresas[opcao-1]);
+                    break;
+                } else {
+                    painel();
+                    break;
+                }
             case 3: // Cadastrar empresa
                 system("clear");
                 Empresa::total_empresas++;
@@ -50,9 +55,15 @@ int main(){
                 break;
             case 4: // Exibir média de funcionários por empresa
                 system("clear");
-                cout << "Média de funcionários por empresa: " << Funcionario::total_funcionarios/Empresa::total_empresas << endl;
-                painel();
-                break;
+                if( listarEmpresas(empresas, Empresa::total_empresas)){
+                    cout << "Média de funcionários por empresa: " << Funcionario::total_funcionarios/Empresa::total_empresas << endl;
+                    painel();
+                    break;
+                } else {
+                    painel();
+                    break;
+                }
+                
             case 5: // Limpar a tela e exibir painel
                 system("clear");
                 painel();

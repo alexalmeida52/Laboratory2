@@ -115,15 +115,17 @@ void selecaoPainelEmpresa(Empresa &empresa){
 
 
 // Lista totas as empresas contidas no vetor passado como argumento
-void listarEmpresas(Empresa empresas[], int total_empresas){
+int listarEmpresas(Empresa empresas[], int total_empresas){
     cout << "Empresas: " << endl;
     if(!total_empresas){
         system("clear");
         cout << "Nenhuma empresa cadastrada." << endl;
+        return 0;
     } else {
         for(int i = 0; i < total_empresas; ++i){
             cout << "\t" << i+1 << ". " << empresas[i].getNome() << endl;
         }
+        return 1;
     }
 }
 
