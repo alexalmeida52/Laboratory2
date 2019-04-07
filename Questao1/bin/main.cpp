@@ -34,10 +34,10 @@ int main(){
                 break;
             case 2: // Selecionar empresa
                 system("clear");
-                listarEmpresas(empresas, Empresa::total_empresas);
+                
                 if(listarEmpresas(empresas, Empresa::total_empresas)){
                     cout << "\n";
-                cout << "Selecione a empresa: ";
+                    cout << "Selecione a empresa: ";
                     cin >> opcao;
                     selecaoPainelEmpresa(empresas[opcao-1]);
                     break;
