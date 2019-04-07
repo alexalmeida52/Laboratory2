@@ -90,7 +90,7 @@ void selecaoPainelEmpresa(Empresa &empresa){
                 painelEmpresa(empresa);                
                 break;
             case 4: { // Cadastrar funcionário
-                system("clear");                
+                system("clear");             
                 Funcionario funcionario = inserirFuncionario();
                 bool resposta = empresa.setFuncionario(funcionario);
                 if(resposta == true){

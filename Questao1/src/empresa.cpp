@@ -60,6 +60,7 @@ bool Empresa::setFuncionario(Funcionario &f){
     } else {
         cout << f.getNome() << " já está cadastrado(a)." << endl;
         cout << "Digite 4 para tentar novamente. Ou 5 para ver o painel.\n" << endl;
+        Funcionario::total_funcionarios--;
         return false;
     }
 }
